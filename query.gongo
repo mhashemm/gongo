@@ -1,0 +1,16 @@
+query SomeName() ={
+	"a": 1,
+"fds":1
+};
+query SomeName(xid int,y int) =[
+	"%xid"
+];
+
+query Aggregate() = [
+   {
+      "$match": { "size": "medium" }
+   },
+   {
+      "$group": { "_id": "$name", "totalQuantity": { "$sum": "$quantity" } }
+   }
+] ;
